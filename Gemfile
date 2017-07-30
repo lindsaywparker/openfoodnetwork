@@ -73,6 +73,7 @@ gem 'whenever', require: false
 group :assets do
   gem 'compass-rails'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'csso-rails', '~> 0.8.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'

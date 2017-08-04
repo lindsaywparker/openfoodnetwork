@@ -36,7 +36,7 @@ en-GB:
   cancel_order: "Cancel Order"
   confirm_send_invoice: "An invoice for this order will be sent to the customer. Are you sure you want to continue?"
   confirm_resend_order_confirmation: "Are you sure you want to resend the order confirmation email?"
-  must_have_valid_business_number: "Please enter your company number."
+  must_have_valid_business_number: "%{enterprise_name} must have a valid company number before invoices can be sent."
   invoice: "Invoice"
   percentage_of_sales: "%{percentage} of sales"
   capped_at_cap: "capped at %{cap}"
@@ -97,6 +97,10 @@ en-GB:
         update_user_invoice_explained: "Use this button to immediately update invoices for the month to date for each enterprise user in the system. This task can be set up to run automatically every night."
         auto_finalise_invoices: "Auto-finalise invoices monthly on the 2nd at 1:30am"
         auto_update_invoices: "Auto-update invoices nightly at 1:00am"
+    shopfront_settings:
+      embedded_shopfront_settings: Embedded Shopfront Settings
+      enable_embedded_shopfronts: Enable Embedded Shopfronts
+      embedded_shopfronts_whitelist: External Domains Whitelist
     business_model_configuration:
       edit:
         business_model_configuration: "Business Model"
@@ -178,6 +182,9 @@ en-GB:
         hidden_powertip: These products have been hidden from your inventory and will not be available to add to your shop. You can click 'Add' to add a product to you inventory.
         new_powertip: These products are available to be added to your inventory. Click 'Add' to add a product to your inventory, or 'Hide' to hide it from view. You can always change your mind later!
     orders:
+      index:
+        capture: "Mark as paid"
+        ship: "Mark as delivered"
       bulk_management:
         tip: "Use this page to alter product quantities across multiple orders. Products may also be removed from orders entirely, if required."
         shared: "Shared Resource?"
@@ -198,6 +205,12 @@ en-GB:
         max_fulfilled_units: "Max Fulfilled Units"
         order_error: "Some errors must be resolved before you can update orders.\nAny fields with red borders contain errors."
         variants_without_unit_value: "WARNING: Some variants do not have a unit value"
+      invoice:
+        issued_on: Issued on
+        tax_invoice: TAX INVOICE
+        code: Code
+        from: From
+        to: To
     order_cycles:
       edit:
         choose_products_from: 'Choose Products From:'
@@ -212,6 +225,11 @@ en-GB:
         status: Status
         manage: Manage
       form:
+        business_details:
+          abn: "Company Number"
+          abn_placeholder: "eg. 00123456789"
+          acn: "Charity Number"
+          acn_placeholder: "eg. 00123456789"
         shop_preferences:
           shopfront_requires_login: "Publicly visible shopfront?"
           shopfront_requires_login_tip: "Choose whether customers must login to view the shopfront or if it's visible to everybody."
@@ -238,10 +256,20 @@ en-GB:
       require_customer_login: "This shop is for customers only."
       require_login_html: "Please %{login} if you have an account already. Otherwise, %{register} to become a customer."
       require_customer_html: "Please %{contact} %{enterprise} to become a customer."
-  invoice_column_item: "Item"
-  invoice_column_qty: "Qty"
   invoice_column_tax: "VAT"
   invoice_column_price: "Price"
+  invoice_column_item: "Item"
+  invoice_column_qty: "Qty"
+  invoice_column_unit_price_with_taxes: "Unit price (Incl. tax)"
+  invoice_column_unit_price_without_taxes: "Unit price (Excl. tax)"
+  invoice_column_price_with_taxes: "Total price (Incl. tax)"
+  invoice_column_price_without_taxes: "Total price (Excl. tax)"
+  invoice_column_tax_rate: "Tax rate"
+  tax_invoice: "INVOICE"
+  tax_total: "Total tax (%{rate}):"
+  total_excl_tax: "Total (Excl. tax):"
+  total_incl_tax: "Total (Incl. tax):"
+  invoice_tax_total: "VAT Total:"
   logo: "Logo (640x130)"
   logo_mobile: "Mobile logo (75x26)"
   logo_mobile_svg: "Mobile logo (SVG)"
@@ -730,10 +758,10 @@ en-GB:
   enterprise_long_desc: "Long Description"
   enterprise_long_desc_placeholder: "This is your opportunity to tell the story of your enterprise - what makes you different and wonderful? We'd suggest keeping your description to under 600 characters or 150 words."
   enterprise_long_desc_length: "%{num} characters / up to 600 recommended"
-  enterprise_abn: "ABN"
-  enterprise_abn_placeholder: "eg. 99 123 456 789"
-  enterprise_acn: "ACN"
-  enterprise_acn_placeholder: "eg. 123 456 789"
+  enterprise_abn: "Company Number"
+  enterprise_abn_placeholder: "eg. 00123456789"
+  enterprise_acn: "Charity Number"
+  enterprise_acn_placeholder: "eg. 00123456789"
   enterprise_tax_required: "You need to make a selection."
   enterprise_final_step: "Final step!"
   enterprise_social_text: "How can people find %{enterprise} online?"
@@ -1008,6 +1036,14 @@ en-GB:
   validation_msg_tax_category_cant_be_blank: "^Tax Category can't be blank"
   validation_msg_is_associated_with_an_exising_customer: "is associated with an existing customer"
   spree:
+    admin:
+      orders:
+        invoice:
+          issued_on: Issued on
+          tax_invoice: INVOICE
+          code: Code
+          from: From
+          to: To
     zipcode: Postcode
     shipment_states:
       backorder: backorder

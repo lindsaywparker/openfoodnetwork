@@ -54,6 +54,7 @@ First, check your dependencies: Ensure that you have Ruby 2.1.5 installed:
 Install the project's gem dependencies:
 
     cd openfoodnetwork
+    ./script/upgrade_bundler.sh
     bundle install
 
 Configure the site:
@@ -106,6 +107,9 @@ installed](https://github.com/openfoodfoundation/openfoodnetwork/wiki/Karma), An
 If you want karma to automatically rerun the tests on file modification, use:
 
     ./script/karma start
+
+### Multilingual
+Do not forget to run `rake tmp:cache:clear` after locales are updated to reload I18n js translations.
 
 ## Credits
 
